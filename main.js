@@ -7,6 +7,7 @@ var $$ = document.querySelectorAll.bind(document);
 const cd = $('.cd');
 const cdWidth = cd.offsetWidth;
 const headding = $('header h2');
+const numberSongs = $('header p');
 const cdThumb = $('.cd-thumb');
 const audio = $('#audio');
 const playBtn = $('.btn-toggle-play');
@@ -17,6 +18,10 @@ const prev = $('.btn-prev');
 const random = $('.btn-random');
 const repeat = $('.btn-repeat');
 const playlist = $('.playlist');
+const btnCheckbox = $('#btnLate');
+window.onload=function(){
+  btnCheckbox.checked = false;
+}
 const app = {
     currentIndex : 3,
     isplaying:false,
@@ -29,6 +34,66 @@ const app = {
           singer: 'Vicetone',
           path: 'https://aredir.nixcdn.com/NhacCuaTui924/Nevada-Vicetone-4494556.mp3?st=_IjpS9u0LjapNgzm058wVw&e=1623143773',
           image: 'https://i.pinimg.com/originals/f8/6f/33/f86f3378e656883b33594f06d78d1634.jpg',
+        },
+        {
+          name: 'Sài gòn đau lòng quá',
+          singer: 'Hứa Kim Tuyền, Hoàng Duyên',
+          path: 'https://aredir.nixcdn.com/NhacCuaTui1013/SaiGonDauLongQua-HuaKimTuyenHoangDuyen-6992977.mp3?st=umVX1OimCK_RZoZj8p8ZXg&e=1627627081',
+          image: 'https://avatar-ex-swe.nixcdn.com/song/2021/03/27/d/2/9/1/1616859493571_500.jpg',
+        },
+        {
+          name: 'Sao ta ngược lỗi',
+          singer: 'Đình Dũng',
+          path: 'https://f9-stream.nixcdn.com/NhacCuaTui1018/SaoTaNguocLoi-DinhDung-7052177.mp3?st=BeP7jNk-GQHgItgukSJ-SA&e=1627659803',
+          image: 'https://avatar-ex-swe.nixcdn.com/singer/avatar/2020/09/22/5/3/5/d/1600744344048_600.jpg',
+        },
+        {
+          name: 'Thức giấc',
+          singer: 'DA LAB',
+          path: 'https://f9-stream.nixcdn.com/NhacCuaTui1018/ThucGiac-DaLAB-7048212.mp3?st=CU7UouxMkLR3D4zs-vCT5w&e=1627659887',
+          image: 'https://avatar-ex-swe.nixcdn.com/singer/avatar/2020/08/03/3/f/4/5/1596425146149_600.jpg',
+        },
+        {
+          name: 'Trắc trở',
+          singer: 'X2X',
+          path: 'https://f9-stream.nixcdn.com/NhacCuaTui1017/TracTro-X2X-7040184.mp3?st=Vlhm8SQa578mk1u_mFBrXA&e=1627659958',
+          image: 'https://avatar-ex-swe.nixcdn.com/singer/avatar/2021/03/15/4/7/7/8/1615802750962_600.jpg',
+        },
+        {
+          name: 'Có hẹn với thanh xuân',
+          singer: 'Monstar',
+          path: 'https://f9-stream.nixcdn.com/NhacCuaTui1018/CoHenVoiThanhXuan-MONSTAR-7050201.mp3?st=1WBUB0TPwGFOVHqXAVnyPg&e=1627660176',
+          image: 'https://avatar-ex-swe.nixcdn.com/singer/avatar/2017/12/11/d/e/b/9/1512984325191_600.jpg',
+        },
+        {
+          name: 'Từng yêu đến thế',
+          singer: 'Kalee Hoàng, Huy Le',
+          path: 'https://f9-stream.nixcdn.com/NhacCuaTui1018/TungYeuDenThe-KaleeHoangHuyLe-7053009.mp3?st=FBso6xQDZfmsE11boR9Cgg&e=1627660265',
+          image: 'https://avatar-ex-swe.nixcdn.com/singer/avatar/2021/01/04/e/f/b/c/1609742824669_600.jpg',
+        },
+        {
+          name: 'Phải chăng em đã yêu',
+          singer: 'Juky San, RedT',
+          path: 'https://aredir.nixcdn.com/NhacCuaTui1011/PhaiChangEmDaYeu-JukySanRedT-6940932.mp3?st=8KwUmwOI_gJ87HUx2Ei-fg&e=1627629969',
+          image: 'https://avatar-ex-swe.nixcdn.com/singer/avatar/2021/02/17/a/3/2/1/1613561860337_600.jpg',
+        },
+        {
+          name: 'Ghé qua',
+          singer: 'Key',
+          path: 'https://aredir.nixcdn.com/NhacCuaTui964/GheQua-Key-5471203.mp3?st=0R0ECzOvYGRSIKu6E4FqPw&e=1627630255',
+          image: 'https://avatar-ex-swe.nixcdn.com/singer/avatar/2012/06/67562_avatar_gKL.jpg',
+        },
+        {
+          name: 'Nắm đôi bàn tay',
+          singer: 'Kay Trần',
+          path: 'https://f9-stream.nixcdn.com/NhacCuaTui1017/NamDoiBanTay-KayTran-7042104.mp3?st=C43fwxV1Hit3j-xFKxAsBw&e=1627629064',
+          image: 'https://avatar-ex-swe.nixcdn.com/singer/avatar/2021/07/05/7/5/8/a/1625467381647_600.jpg',
+        },
+        {
+          name: 'Nàng thơ',
+          singer: 'Hoàng Dũng',
+          path: 'https://aredir.nixcdn.com/NhacCuaTui1001/NangTho-HoangDung-6413381.mp3?st=A5W9gpzOJOT3_qCryA3T9A&e=1627629247',
+          image: 'https://avatar-ex-swe.nixcdn.com/singer/avatar/2019/09/19/1/e/f/8/1568871085871_600.jpg',
         },
         {
           name: 'Light It Up',
@@ -93,19 +158,17 @@ const app = {
       // },
       render:function(){
         const htmls = this.songs.map((song, index)=>{
-            return `<div class="song ${index === this.currentIndex ? 'active' : ''}" data-index=${index}>
+            return `<div class="song ${index === this.currentIndex ? 'active' : 'active2'}" data-index=${index}>
             <div class="thumb" style="background-image: url('${song.image}')">
             </div>
             <div class="body">
               <h3 class="title">${song.name}</h3>
               <p class="author">${song.singer}</p>
             </div>
-            <div class="option">
-              <i class="fas fa-ellipsis-h"></i>
-            </div>
           </div>`
         });
         playlist.innerHTML = htmls.join('');
+        
       },
       defineProperties: function()
       {
@@ -235,11 +298,19 @@ const app = {
               audio.play();
             }
           }
+          btnCheckbox.onclick = function()
+          {
+            document.querySelector('.dashboard').classList.toggle('active');
+            document.querySelector('.player').classList.toggle('active');
+            document.querySelector('.playlist').classList.toggle('active');
+          }
+
       },
       loadCurrentSong:function()
       {
          
           headding.textContent = this.currentSong.name;
+          numberSongs.textContent = 'Số bài hát' + ' ' + app.songs.length;
           cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
           audio.src = this.currentSong.path;    
       },
